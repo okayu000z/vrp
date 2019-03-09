@@ -1,0 +1,98 @@
+c 0	Sugar v2-3-3 + /usr/local/bin/clasp
+c 0	BEGIN Sun Mar 10 02:57:07 2019
+c 0	PID 13269
+c 0	HOST okamoto-thinkpad-x1-carbon-5th
+c 0	ENCODING eagar_n5.csp TO /tmp/sugar13269.cnf
+c 0	CMD java  -cp '/home/okamoto/sugar-v2-3-3/bin/sugar-v2-3-3.jar' jp.kobe_u.sugar.SugarMain -v -v -hybrid -option hy8  -encode 'eagar_n5.csp' '/tmp/sugar13269.cnf' '/tmp/sugar13269.map'
+c 0	Parsing eagar_n5.csp
+c 0	parsed 60 expressions
+c 0	Heap : 0 MiB used (max 3952 MiB), NonHeap : 8 MiB used (max 0 MiB)
+c 0	Converting to clausal form CSP
+c 0	converted 6 (10%) expressions
+c 0	converted 12 (20%) expressions
+c 0	converted 18 (30%) expressions
+c 0	converted 24 (40%) expressions
+c 0	converted 30 (50%) expressions
+c 0	converted 36 (60%) expressions
+c 0	converted 42 (70%) expressions
+c 0	converted 48 (80%) expressions
+c 0	converted 54 (90%) expressions
+c 0	converted 60 (100%) expressions
+c 0	CSP : 16 integers, 54 booleans, 167 clauses, largest domain size 51
+c 0	Heap : 0 MiB used (max 3952 MiB), NonHeap : 9 MiB used (max 0 MiB)
+c 0	Propagation in CSP
+c 0	0 values, 0 unsatisfiable literals, and 0 valid clauses are removed
+c 0	CSP : 16 integers, 54 booleans, 167 clauses, largest domain size 51
+c 0	Heap : 0 MiB used (max 3952 MiB), NonHeap : 9 MiB used (max 0 MiB)
+c 0	Hybrid Encoding CSP to PB : /tmp/sugar13269.cnf
+c 0	0 values, 0 unsatisfiable literals, and 0 valid clauses are removed
+c 0	Hybrid 8 (by Domain Product 4096)
+c 0	First classification of variables : Order=10 Log=6
+c 0	0 values, 0 unsatisfiable literals, and 0 valid clauses are removed
+c 0	Hybrid 8 (by Domain Product 4096)
+c 0	Second classification of variables : Order=10 Log=6
+c 0	CSP : 16 integers, 114 booleans, 227 clauses, largest domain size 51
+c 0	Heap : 0 MiB used (max 3952 MiB), NonHeap : 9 MiB used (max 0 MiB)
+c 0	Writing map file : /tmp/sugar13269.map
+c 0	Heap : 1 MiB used (max 3952 MiB), NonHeap : 10 MiB used (max 0 MiB)
+c 0	PB : 178 PB variables, 560 PB clauses, 17418 bytes
+c 0	Heap : 1 MiB used (max 3952 MiB), NonHeap : 10 MiB used (max 0 MiB)
+c 0	ENCODING CPU 0.44 (0 0 0.42 0.02)
+c 0	SOLVING /tmp/sugar13269.cnf WITH /tmp/sugar13269.map
+c 0	SAT SOLVING /tmp/sugar13269.cnf
+c 0	CMD /usr/local/bin/clasp --stats '/tmp/sugar13269.cnf'
+c 0	c clasp version 3.3.4
+c 0	c Reading from /tmp/sugar13269.cnf
+c 0	c Solving...
+c 0	c Answer: 1
+c 0	s SATISFIABLE
+c 0	c 
+c 0	c Models         : 1+
+c 0	c Calls          : 1
+c 0	c Time           : 0.004s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+c 0	c CPU Time       : 0.004s
+c 0	c 
+c 0	c Choices        : 16      
+c 0	c Conflicts      : 9        (Analyzed: 9)
+c 0	c Restarts       : 0       
+c 0	c Model-Level    : 7.0     
+c 0	c Problems       : 1        (Average Length: 0.00 Splits: 0)
+c 0	c Lemmas         : 9        (Deleted: 0)
+c 0	c   Binary       : 0        (Ratio:   0.00%)
+c 0	c   Ternary      : 0        (Ratio:   0.00%)
+c 0	c   Conflict     : 9        (Average Length:    6.1 Ratio: 100.00%) 
+c 0	c   Loop         : 0        (Average Length:    0.0 Ratio:   0.00%) 
+c 0	c   Other        : 0        (Average Length:    0.0 Ratio:   0.00%) 
+c 0	c Backjumps      : 9        (Average:  1.00 Max:   1 Sum:      9)
+c 0	c   Executed     : 9        (Average:  1.00 Max:   1 Sum:      9 Ratio: 100.00%)
+c 0	c   Bounded      : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio:   0.00%)
+c 0	c 
+c 0	c Variables      : 178      (Eliminated:   77 Frozen:   44)
+c 0	c Constraints    : 420      (Binary:  20.7% Ternary:  39.0% Other:  40.2%)
+c 0	c 
+c 0	DECODING /tmp/sugar13269.out WITH /tmp/sugar13269.map
+c 0	CMD java  -cp '/home/okamoto/sugar-v2-3-3/bin/sugar-v2-3-3.jar' jp.kobe_u.sugar.SugarMain -v -v -hybrid -option hy8  -decode '/tmp/sugar13269.out' '/tmp/sugar13269.map'
+c 0	Decoding /tmp/sugar13269.out
+s SATISFIABLE
+a x_0	3
+a x_1	4
+a x_2	1
+a x_3	2
+a x_4	0
+a d-0	20
+a d-1	20
+a d-2	10
+a d-3	10
+a d-4	10
+a o_0	1
+a o_1	3
+a o_2	0
+a o_3	2
+a o_4	4
+a distance	70
+a
+c 0	Heap : 2 MiB used (max 3952 MiB), NonHeap : 9 MiB used (max 0 MiB)
+c 0	DECODING CPU 0.22 (0 0 0.18 0.04)
+c 0	SOLVING CPU 0.23 (0 0 0.19 0.04)
+c 0	CPU 0.68 (0.01 0 0.61 0.06)
+c 0	END Sun Mar 10 02:57:07 2019
