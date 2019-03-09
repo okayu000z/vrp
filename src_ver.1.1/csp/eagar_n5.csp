@@ -1,0 +1,75 @@
+;;-----[BEGIN] Discription-----
+; Title : Sample Program for VRP Promgam Solver
+; Date : 2019/03/06
+; Auther : Yuki Okamoto
+;;-----[END] Discription-----
+
+;;-----[BEGIN] The initial constraint-----
+(int x_0 0 4)
+(int x_1 0 4)
+(int x_2 0 4)
+(int x_3 0 4)
+(int x_4 0 4)
+(int d-0 10 20)
+(int d-1 10 20)
+(int d-2 10 20)
+(int d-3 10 20)
+(int d-4 10 20)
+(=> (= x_0 1) (= d-0 10))
+(=> (= x_0 2) (= d-0 20))
+(=> (= x_0 3) (= d-0 20))
+(=> (= x_0 4) (= d-0 10))
+(=> (= x_1 0) (= d-1 10))
+(=> (= x_1 2) (= d-1 10))
+(=> (= x_1 3) (= d-1 20))
+(=> (= x_1 4) (= d-1 20))
+(=> (= x_2 0) (= d-2 20))
+(=> (= x_2 1) (= d-2 10))
+(=> (= x_2 3) (= d-2 10))
+(=> (= x_2 4) (= d-2 20))
+(=> (= x_3 0) (= d-3 20))
+(=> (= x_3 1) (= d-3 20))
+(=> (= x_3 2) (= d-3 10))
+(=> (= x_3 4) (= d-3 10))
+(=> (= x_4 0) (= d-4 10))
+(=> (= x_4 1) (= d-4 20))
+(=> (= x_4 2) (= d-4 20))
+(=> (= x_4 3) (= d-4 10))
+;;-----[END] The initial constraint-----
+
+;;-----[BEGIN] The decompose of circuit constraint-----
+(alldifferent x_0 x_1 x_2 x_3 x_4)
+(int o_0 0 4)
+(int o_1 0 4)
+(int o_2 0 4)
+(int o_3 0 4)
+(int o_4 0 4)
+(=> (ne x_0 0) (iff (= x_0 1) (= o_1 (+ o_0 1))))
+(=> (ne x_0 0) (iff (= x_0 2) (= o_2 (+ o_0 1))))
+(=> (ne x_0 0) (iff (= x_0 3) (= o_3 (+ o_0 1))))
+(=> (ne x_0 0) (iff (= x_0 4) (= o_4 (+ o_0 1))))
+(=> (ne x_1 0) (iff (= x_1 0) (= o_0 (+ o_1 1))))
+(=> (ne x_1 0) (iff (= x_1 2) (= o_2 (+ o_1 1))))
+(=> (ne x_1 0) (iff (= x_1 3) (= o_3 (+ o_1 1))))
+(=> (ne x_1 0) (iff (= x_1 4) (= o_4 (+ o_1 1))))
+(=> (ne x_2 0) (iff (= x_2 1) (= o_0 (+ o_2 1))))
+(=> (ne x_2 0) (iff (= x_2 2) (= o_1 (+ o_2 1))))
+(=> (ne x_2 0) (iff (= x_2 3) (= o_3 (+ o_2 1))))
+(=> (ne x_2 0) (iff (= x_2 4) (= o_4 (+ o_2 1))))
+(=> (ne x_3 0) (iff (= x_3 1) (= o_0 (+ o_3 1))))
+(=> (ne x_3 0) (iff (= x_3 2) (= o_1 (+ o_3 1))))
+(=> (ne x_3 0) (iff (= x_3 3) (= o_2 (+ o_3 1))))
+(=> (ne x_3 0) (iff (= x_3 4) (= o_4 (+ o_3 1))))
+(=> (ne x_4 0) (iff (= x_4 1) (= o_0 (+ o_4 1))))
+(=> (ne x_4 0) (iff (= x_4 2) (= o_1 (+ o_4 1))))
+(=> (ne x_4 0) (iff (= x_4 3) (= o_2 (+ o_4 1))))
+(=> (ne x_4 0) (iff (= x_4 4) (= o_3 (+ o_4 1))))
+(and (ne x_0 0) (ne x_1 1) (ne x_2 2) (ne x_3 3) (ne x_4 4))
+;;-----[END] The decompose of circuit constraint-----
+
+;;----- The answer-----
+(int distance 0 100)
+(= (add d-0 d-1 d-2 d-3 d-4) distance)
+
+;;----- The objective function-----
+(le (add distance) 100)
